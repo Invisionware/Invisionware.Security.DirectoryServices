@@ -1,0 +1,61 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Security.DirectoryServices", "src\Invisionware.Security.DirectoryServices\Invisionware.Security.DirectoryServices.csproj", "{A7586740-2503-41AD-ABA8-EB523BE17153}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Security.DirectoryServices.UnitTests", "tests\Invisionware.Security.DirectoryServices.UnitTests\Invisionware.Security.DirectoryServices.UnitTests.csproj", "{A9110B44-4B2A-4FFD-B441-D27EAAF2AED7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".misc", ".misc", "{69B4D791-A1B4-4094-8D23-ECA6EEB1F24F}"
+	ProjectSection(SolutionItems) = preProject
+		build.cake = build.cake
+		build.settings.json = build.settings.json
+		build.version.json = build.version.json
+		logo.png = logo.png
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{184C5AD9-B119-4CCA-B6DE-F7C3AA8FED90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B01A95E1-A69C-4B32-9EE5-B01180377101}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Security.DirectoryServices.LDAP", "src\Invisionware.Security.DirectoryServices.LDAP\Invisionware.Security.DirectoryServices.LDAP.csproj", "{076E5621-0E48-493D-AA75-5C0DFD634F16}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Security.DirectoryServices.LDAP.Tests", "tests\Invisionware.Security.DirectoryServices.LDAP.Tests\Invisionware.Security.DirectoryServices.LDAP.Tests.csproj", "{6ADC75E6-4283-447F-9289-45EB12C1ED51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7586740-2503-41AD-ABA8-EB523BE17153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7586740-2503-41AD-ABA8-EB523BE17153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7586740-2503-41AD-ABA8-EB523BE17153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7586740-2503-41AD-ABA8-EB523BE17153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9110B44-4B2A-4FFD-B441-D27EAAF2AED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9110B44-4B2A-4FFD-B441-D27EAAF2AED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9110B44-4B2A-4FFD-B441-D27EAAF2AED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9110B44-4B2A-4FFD-B441-D27EAAF2AED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{076E5621-0E48-493D-AA75-5C0DFD634F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{076E5621-0E48-493D-AA75-5C0DFD634F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{076E5621-0E48-493D-AA75-5C0DFD634F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{076E5621-0E48-493D-AA75-5C0DFD634F16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ADC75E6-4283-447F-9289-45EB12C1ED51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ADC75E6-4283-447F-9289-45EB12C1ED51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ADC75E6-4283-447F-9289-45EB12C1ED51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ADC75E6-4283-447F-9289-45EB12C1ED51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7586740-2503-41AD-ABA8-EB523BE17153} = {184C5AD9-B119-4CCA-B6DE-F7C3AA8FED90}
+		{A9110B44-4B2A-4FFD-B441-D27EAAF2AED7} = {B01A95E1-A69C-4B32-9EE5-B01180377101}
+		{076E5621-0E48-493D-AA75-5C0DFD634F16} = {184C5AD9-B119-4CCA-B6DE-F7C3AA8FED90}
+		{6ADC75E6-4283-447F-9289-45EB12C1ED51} = {B01A95E1-A69C-4B32-9EE5-B01180377101}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BD55C22-3DA6-4876-B107-362E30514CC4}
+	EndGlobalSection
+EndGlobal

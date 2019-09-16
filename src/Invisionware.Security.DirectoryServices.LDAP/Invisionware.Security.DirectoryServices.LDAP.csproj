@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>netcoreapp3.0;netstandard2.0;net472</TargetFrameworks>
+	  <PackageId>Invisionware.Security.DirectoryServices.LDAP</PackageId>
+	  <Authors>Invisionware</Authors>
+	  <PackageProjectUrl>https://github.com/Invisionware/Invisionware.Security.DirectoryServices.LDAP</PackageProjectUrl>
+	  <license>Apache-2.0</license>
+	  <PackageIconUrl>https://github.com/Invisionware/Invisionware.Security.DirectoryServices.LDAP/raw/master/logo.png</PackageIconUrl>
+	  <Description></Description>
+	  <Copyright>Copyright © 2019 Invisionware</Copyright>
+	  <PackageTags>LDAP namespace DirectoryServices</PackageTags>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="System.DirectoryServices" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>
