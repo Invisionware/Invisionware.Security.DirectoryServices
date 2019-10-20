@@ -269,3 +269,4 @@ nugetapi.key
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/tests/Invisionware.Security.DirectoryServices.LDAP.Tests/App.config

@@ -29,11 +29,6 @@ namespace Invisionware.Security.DirectoryServices.LDAP
 		/// </summary>
 		private LdapConnectionManager _connectionManager;
 		/// <summary>
-		/// Gets the properties to retrieve.
-		/// </summary>
-		/// <value>The properties to retrieve.</value>
-		private List<string> _propertiesToRetrieve { get; } = new List<string> { "sAMAccountName", "userPrincipalName", "displayName", "mail", "proxyaddresses", "givenName", "sn", "displayName" };
-		/// <summary>
 		/// The maximum page size
 		/// </summary>
 		private int _maxPageSize = 1000;
@@ -55,7 +50,7 @@ namespace Invisionware.Security.DirectoryServices.LDAP
 		/// <param name="surnameFilter">The surname filter.</param>
 		/// <param name="emailFilter">The email filter.</param>
 		/// <returns>IList&lt;LdapAccountEntry&gt;.</returns>
-		public IList<LdapAccountEntry> FindUsers(string accountFilder = "*", string givenNameFilter = "*", string surnameFilter = "*", string emailFilter = "*")
+		public IList<ILdapAccountEntry> FindUsers(string accountFilder = "*", string givenNameFilter = "*", string surnameFilter = "*", string emailFilter = "*")
 		{
 			string filter = $"(&(objectClass=user)(&(sAMAccountName={accountFilder})(givenName={givenNameFilter})(sn={surnameFilter})(Mail={emailFilter})))";
 
@@ -69,7 +64,7 @@ namespace Invisionware.Security.DirectoryServices.LDAP
 		/// </summary>
 		/// <param name="emailAddress">The email address.</param>
 		/// <returns>LdapAccountEntry.</returns>
-		public LdapAccountEntry FindUserByEmail(string emailAddress)
+		public ILdapAccountEntry FindUserByEmail(string emailAddress)
 		{
 			string filter = $"(&(objectClass=user)(Mail={emailAddress}))";
 
@@ -83,7 +78,7 @@ namespace Invisionware.Security.DirectoryServices.LDAP
 		/// </summary>
 		/// <param name="accountName">Name of the account.</param>
 		/// <returns>LdapAccountEntry.</returns>
-		public LdapAccountEntry FindUserByAccountName(string accountName)
+		public ILdapAccountEntry FindUserByAccountName(string accountName)
 		{
 			string filter = $"(&(objectClass=user)(sAMAccountName={accountName}))";
 
@@ -97,7 +92,7 @@ namespace Invisionware.Security.DirectoryServices.LDAP
 		/// </summary>
 		/// <param name="ldapFilter">The LDAP filter.</param>
 		/// <returns>IList&lt;LdapAccountEntry&gt;.</returns>
-		public IList<LdapAccountEntry> FindUserByFilterString(string ldapFilter)
+		public IList<ILdapAccountEntry> FindUserByFilterString(string ldapFilter)
 		{
 			if (!_connectionManager.IsConnected) _connectionManager.Connect();
 
@@ -110,12 +105,15 @@ namespace Invisionware.Security.DirectoryServices.LDAP
 			}
 			)
 			{
-				foreach (var p in _propertiesToRetrieve)
+
+				var props = typeof(LdapAccountEntry).GetLdapPropertyNames();
+
+				foreach (var p in props)
 				{
 					mySearcher.PropertiesToLoad.Add(p);
 				}
 
-				var results = new List<LdapAccountEntry>();
+				var results = new List<ILdapAccountEntry>();
 
 				foreach (SearchResult resEnt in mySearcher.FindAll())
 				{

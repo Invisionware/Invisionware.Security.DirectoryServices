@@ -14,7 +14,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<PackageReference Include="System.DirectoryServices" Version="4.5.0" />
+    <Compile Remove="Managers\**" />
+    <Compile Remove="Query\Filter\**" />
+    <Compile Remove="Query\Fluent\**" />
+    <EmbeddedResource Remove="Managers\**" />
+    <EmbeddedResource Remove="Query\Filter\**" />
+    <EmbeddedResource Remove="Query\Fluent\**" />
+    <None Remove="Managers\**" />
+    <None Remove="Query\Filter\**" />
+    <None Remove="Query\Fluent\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Invisionware.Core" Version="1.0.2-pre04" />
+	<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre02" />
+	<PackageReference Include="System.DirectoryServices" Version="4.6.0" />
   </ItemGroup>
 
 </Project>

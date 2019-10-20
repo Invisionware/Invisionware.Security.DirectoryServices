@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<appSettings>
+		<add key="LdapServer" value="10.0.1.15"/>
+		<add key="LdapUserName" value=""/>
+		<add key="LdapPassword" value=""/>
+	</appSettings>
+</configuration>

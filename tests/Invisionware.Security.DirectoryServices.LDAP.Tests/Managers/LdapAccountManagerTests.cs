@@ -2,13 +2,16 @@ using FluentAssertions;
 using Invisionware.Security.DirectoryServices.LDAP;
 using NUnit.Framework;
 using System;
+using System.Configuration;
+using System.Linq;
+using System.Reflection;
 
 namespace Invisionware.Security.DirectoryServices.LDAP.Tests.Managers
 {
 	[TestFixture(Category = "", Description = "Implements Unit Tests for LdapAccountManager")]
 	public class LdapAccountManagerTests
 	{
-		private LdapServerConnection _connection = new LdapServerConnection { Server = "10.0.1.15" };
+		private LdapServerConnection _connection;
 
 		private LdapConnectionManager _connectionManager;
 
@@ -16,11 +19,29 @@ namespace Invisionware.Security.DirectoryServices.LDAP.Tests.Managers
 		[SetUp]
 		public void Setup()
 		{
+			var appSettings = ConfigurationManager.OpenExeConfiguration(Assembly.GetExecutingAssembly().Location).AppSettings;
+
+			if (!appSettings.Settings.AllKeys.Contains("LdapUserPassword"))
+			{
+				_connection = new LdapServerConnection
+				{
+					Server = appSettings.Settings["LdapServer"].Value
+				};
+			}
+			else
+			{
+				_connection = new LdapServerConnection
+				{
+					Server = appSettings.Settings["LdapServer"].Value,
+					Credentials = new System.Net.NetworkCredential(appSettings.Settings["LdapUserName"].Value, appSettings.Settings["LdapUserPassword"].Value, appSettings.Settings["LdapUserDomain"].Value)
+				};
+			}
+
 			_connectionManager = new LdapConnectionManager(_connection);
 		}
 
 		[Test]
-		public void FindUsers_ExpecgedSingleUser()
+		public void FindUsers_ExpectedSingleUser()
 		{
 			// Arrange
 			var accountManager = _connectionManager.CreateAccountManager();
@@ -76,7 +97,7 @@ namespace Invisionware.Security.DirectoryServices.LDAP.Tests.Managers
 
 			// Assert
 			result.Should().NotBeNull();
-			result.PrimaryEmailAddress.Address.Should().Be(emailAddress);
+			result.PrimaryEmailAddress.Should().Be(emailAddress);
 		}
 
 		[Test]

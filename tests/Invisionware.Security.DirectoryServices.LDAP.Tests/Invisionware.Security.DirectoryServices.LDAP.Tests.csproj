@@ -8,15 +8,27 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Managers\**" />
+	  <EmbeddedResource Remove="Managers\**" />
+	  <None Remove="Managers\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="FluentAssertions" Version="5.9.0" />
 		<PackageReference Include="nunit" Version="3.12.0" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
 		<PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
-		<PackageReference Include="System.DirectoryServices" Version="4.5.0" />
+		<PackageReference Include="System.DirectoryServices" Version="4.6.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\Invisionware.Security.DirectoryServices.LDAP\Invisionware.Security.DirectoryServices.LDAP.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="App.config">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>

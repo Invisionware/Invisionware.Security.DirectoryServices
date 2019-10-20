@@ -16,52 +16,56 @@ using System.Diagnostics;
 
 namespace Invisionware.Security.DirectoryServices.LDAP
 {
-	/// <summary>
-	/// Class LdapAccountEntry.
-	/// </summary>
-	[DebuggerDisplay("AccountName={AccountName},DisplayName={DisplayName},PrimaryEmailAddres={PrimaryEmailAddress}")]
-	public class LdapAccountEntry : ILdapAccountEntry
+	public interface ILdapAccountEntry
 	{
 		/// <summary>
 		/// Gets or sets the name of the account.
 		/// </summary>
 		/// <value>The name of the account.</value>
-		public string AccountName { get; set; }
+		[LdapProperty("sAMAccountName")]
+		string AccountName { get; set; }
 		/// <summary>
 		/// Gets or sets the user principal.
 		/// </summary>
 		/// <value>The user principal.</value>
-		public string UserPrincipal { get; set; }
+		[LdapProperty("userPrincipalName")]
+		string UserPrincipal { get; set; }
 		/// <summary>
 		/// Gets or sets the display name.
 		/// </summary>
 		/// <value>The display name.</value>
-		public string DisplayName { get; set; }
+		[LdapProperty("displayName")]
+		string DisplayName { get; set; }
 		/// <summary>
 		/// Gets or sets the primary email address.
 		/// </summary>
 		/// <value>The primary email address.</value>
-		public string PrimaryEmailAddress { get; set; }
+		[LdapProperty("mail")]
+		string PrimaryEmailAddress { get; set; }
 		/// <summary>
 		/// Gets or sets the email address aliases.
 		/// </summary>
 		/// <value>The email address aliases.</value>
-		public IList<string> EmailAddressAliases { get; set; } = new List<string>();
+		[LdapCollectionPropertyAttribute("proxyAddresses", ElementType = typeof(string))]
+		IList<string> EmailAddressAliases { get; set; }
 		/// <summary>
 		/// Gets or sets the first name.
 		/// </summary>
 		/// <value>The first name.</value>
-		public string FirstName { get; set; }
+		[LdapProperty("givenName")]
+		string FirstName { get; set; }
 		/// <summary>
 		/// Gets or sets the last name.
 		/// </summary>
 		/// <value>The last name.</value>
-		public string LastName { get; set; }
+		[LdapProperty("sn")]
+		string LastName { get; set; }
 
 		/// <summary>
 		/// Gets or sets the properties.
 		/// </summary>
 		/// <value>The properties.</value>
-		public IDictionary<string, object> Properties { get; set; } = new Dictionary<string, object>();
+		[LdapDictionaryPropertyAttribute("*")]
+		IDictionary<string, object> Properties { get; set; }
 	}
 }
