@@ -21,9 +21,9 @@
 	},
 	"test": {
 		"SourcePath": "./tests",
-		"ResultsPath": "./artifacts",
-		"FileSpec": "*.csprj",
-		"Framework": "dotnetcore"
+		"ResultsPath": "./artifacts/tests",
+		"FileSpec": "*.csproj",
+		"Framework": "DotNetCore"
 	},
 	"nuget": {
 		"BuildType": "dotnetcore",
