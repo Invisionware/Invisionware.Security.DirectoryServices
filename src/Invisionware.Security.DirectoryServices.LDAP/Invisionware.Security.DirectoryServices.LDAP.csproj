@@ -1,38 +1,47 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-	  <TargetFrameworks>netcoreapp3.0;netstandard2.0;net472</TargetFrameworks>
-	  <PackageId>Invisionware.Security.DirectoryServices.LDAP</PackageId>
-	  <Authors>Invisionware</Authors>
-	  <PackageProjectUrl>https://github.com/Invisionware/Invisionware.Security.DirectoryServices.LDAP</PackageProjectUrl>
-	  <license>Apache-2.0</license>
-	  <PackageIconUrl>https://github.com/Invisionware/Invisionware.Security.DirectoryServices.LDAP/raw/master/logo.png</PackageIconUrl>
-	  <Description></Description>
-	  <Copyright>Copyright © 2019 Invisionware</Copyright>
-	  <PackageTags>LDAP namespace DirectoryServices</PackageTags>
-	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netcoreapp3.0;netstandard2.0;net472</TargetFrameworks>
+		<PackageId>Invisionware.Security.DirectoryServices.LDAP</PackageId>
+		<Authors>Invisionware</Authors>
+		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.Security.DirectoryServices</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Invisionware/Invisionware.Security.DirectoryServices</RepositoryUrl>
+		<RepositoryType>github</RepositoryType>
+		<PackageIcon>logo.png</PackageIcon>
+		<license>Apache-2.0</license>
+		<Copyright>Copyright © 2020 Invisionware</Copyright>
+		<Description>Utilities for working with LDAP queries.</Description>
+		<PackageTags>LDAP namespace DirectoryServices</PackageTags>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Managers\**" />
-    <Compile Remove="Query\Filter\**" />
-    <Compile Remove="Query\Fluent\**" />
-    <EmbeddedResource Remove="Managers\**" />
-    <EmbeddedResource Remove="Query\Filter\**" />
-    <EmbeddedResource Remove="Query\Fluent\**" />
-    <None Remove="Managers\**" />
-    <None Remove="Query\Filter\**" />
-    <None Remove="Query\Fluent\**" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\logo.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="Extensions\DirectorySearcherExtensions.cs" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Managers\**" />
+		<Compile Remove="Query\Filter\**" />
+		<Compile Remove="Query\Fluent\**" />
+		<EmbeddedResource Remove="Managers\**" />
+		<EmbeddedResource Remove="Query\Filter\**" />
+		<EmbeddedResource Remove="Query\Fluent\**" />
+		<None Remove="Managers\**" />
+		<None Remove="Query\Filter\**" />
+		<None Remove="Query\Fluent\**" />
+	</ItemGroup>
 
-  <ItemGroup>
-	<PackageReference Include="Invisionware.Core" Version="1.0.2-pre04" />
-	<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre02" />
-	<PackageReference Include="System.DirectoryServices" Version="4.6.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Extensions\DirectorySearcherExtensions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Invisionware.Core" Version="1.0.2-pre04" />
+		<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre02" />
+		<PackageReference Include="System.DirectoryServices" Version="4.6.0" />
+	</ItemGroup>
 
 </Project>

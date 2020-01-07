@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".misc", ".misc", "{69B4D791
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{184C5AD9-B119-4CCA-B6DE-F7C3AA8FED90}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{184C5AD9-B119-4CCA-B6DE-F7C3AA8FED90}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B01A95E1-A69C-4B32-9EE5-B01180377101}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invisionware.Security.DirectoryServices.LDAP", "src\Invisionware.Security.DirectoryServices.LDAP\Invisionware.Security.DirectoryServices.LDAP.csproj", "{076E5621-0E48-493D-AA75-5C0DFD634F16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Security.DirectoryServices.LDAP", "src\Invisionware.Security.DirectoryServices.LDAP\Invisionware.Security.DirectoryServices.LDAP.csproj", "{076E5621-0E48-493D-AA75-5C0DFD634F16}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Security.DirectoryServices.LDAP.Tests", "tests\Invisionware.Security.DirectoryServices.LDAP.Tests\Invisionware.Security.DirectoryServices.LDAP.Tests.csproj", "{6ADC75E6-4283-447F-9289-45EB12C1ED51}"
 EndProject
