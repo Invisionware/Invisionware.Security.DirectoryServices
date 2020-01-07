@@ -26,6 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Extensions\DirectorySearcherExtensions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
 	<PackageReference Include="Invisionware.Core" Version="1.0.2-pre04" />
 	<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre02" />
 	<PackageReference Include="System.DirectoryServices" Version="4.6.0" />
