@@ -4,7 +4,7 @@ VisualStudioVersion = 16.0.29230.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Security.DirectoryServices", "src\Invisionware.Security.DirectoryServices\Invisionware.Security.DirectoryServices.csproj", "{A7586740-2503-41AD-ABA8-EB523BE17153}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Security.DirectoryServices.UnitTests", "tests\Invisionware.Security.DirectoryServices.UnitTests\Invisionware.Security.DirectoryServices.UnitTests.csproj", "{A9110B44-4B2A-4FFD-B441-D27EAAF2AED7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invisionware.Security.DirectoryServices.Tests", "tests\Invisionware.Security.DirectoryServices.Tests\Invisionware.Security.DirectoryServices.Tests.csproj", "{A9110B44-4B2A-4FFD-B441-D27EAAF2AED7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".misc", ".misc", "{69B4D791-A1B4-4094-8D23-ECA6EEB1F24F}"
 	ProjectSection(SolutionItems) = preProject
