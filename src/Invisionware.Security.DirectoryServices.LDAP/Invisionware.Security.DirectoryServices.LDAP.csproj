@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netcoreapp3.0;netstandard2.0;net472</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
 		<PackageId>Invisionware.Security.DirectoryServices.LDAP</PackageId>
 		<Authors>Invisionware</Authors>
 		<PackageProjectUrl>https://github.com/Invisionware/Invisionware.Security.DirectoryServices</PackageProjectUrl>
@@ -39,9 +39,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Invisionware.Core" Version="1.0.2-pre04" />
-		<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre02" />
-		<PackageReference Include="System.DirectoryServices" Version="4.6.0" />
+		<PackageReference Include="Invisionware.Core" Version="1.0.2-pre05" />
+		<PackageReference Include="Invisionware.IoC" Version="1.0.2-pre03" />
+		<PackageReference Include="System.DirectoryServices" Version="4.7.0" />
 	</ItemGroup>
 
 </Project>
